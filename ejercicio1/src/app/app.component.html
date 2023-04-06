@@ -6,14 +6,22 @@
 <main class="main-app">
   <div>
       <div class="input-data">
-          Edad Uno
-          <input type="number" [(ngModel)]="edadUno">
-          Edad Dos
-          <input type="number" [(ngModel)]="edadDos">
-          =
-          <input type="number" [(ngModel)]="resultado" readonly>
-          <button (click)="Suma()">Suma</button>
-          <button (click)="Promedio()">Promedio</button>
+        <b>Edad Uno</b>
+        <input type="number" [(ngModel)]="edadUno">
+        <b>Edad Dos</b>
+        <input type="number" [(ngModel)]="edadDos">
+      </div>
+      <br>
+      <div class="show-result">
+        <b>Suma</b>
+        <input type="number" [(ngModel)]="suma" readonly>
+        <b>Promedio</b>
+        <input type="number" [(ngModel)]="promedio" readonly>
+      </div>
+      <br>
+      <div class="calculate">
+        <button (click)="Calcular()">Calcular</button>
+        <button (click)="ClearTextBox()">Limpiar</button>
       </div>
   </div>
 </main>
