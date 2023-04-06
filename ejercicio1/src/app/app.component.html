@@ -1,0 +1,19 @@
+<header class="header-app">
+  <div class="title-app">
+      <h1>Ejercicio 1: Suma y promedio de edades</h1>
+  </div>
+</header>
+<main class="main-app">
+  <div>
+      <div class="input-data">
+          Edad Uno
+          <input type="number" [(ngModel)]="edadUno">
+          Edad Dos
+          <input type="number" [(ngModel)]="edadDos">
+          =
+          <input type="number" [(ngModel)]="resultado" readonly>
+          <button (click)="Suma()">Suma</button>
+          <button (click)="Promedio()">Promedio</button>
+      </div>
+  </div>
+</main>

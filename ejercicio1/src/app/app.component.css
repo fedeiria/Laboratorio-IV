@@ -1,0 +1,52 @@
+* {
+    margin: 0;
+    padding: 0;
+    
+}
+
+main {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.header-app {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;   
+}
+
+.title-app {
+    padding: 5px;
+    color: #3f3e3e;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    font-weight: bold;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.main-app {
+    text-align: center;
+    justify-content: center;
+}
+
+.input-data {
+    font-weight: bold;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.input-data input {
+    height: 18px;
+    width: 150px;
+    margin: 5px;
+    text-align: center;
+    align-items: center;
+}
+
+.input-data button {
+    color: black;
+    margin: 5px;
+    height: 22px;
+    width: 150px;
+    text-align: center;
+    background-color: #aad5cf;
+}
