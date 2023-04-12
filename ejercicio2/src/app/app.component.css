@@ -1,0 +1,35 @@
+.container {
+    height: 400px;
+    display: flex;
+    margin-top: 100px;
+    border-radius: 4px;
+    text-align: center;
+    justify-content: center;
+    background: whitesmoke;
+}
+
+.input {
+    margin-top: 40px;
+}
+
+.text {
+    height: 25px;
+    width: 250px;
+    margin-top: 10px;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.title {
+    padding: 5px;
+    color: #3f3e3e;
+    font-size: larger;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.input [type=submit] {
+    height: 30px;
+    width: 255px;
+    margin-top: 35px;
+    font-size: larger;
+    font-family: 'Montserrat', sans-serif;
+}
