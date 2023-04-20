@@ -1,0 +1,30 @@
+.content {
+    height: 500px;
+    display: flex;
+    max-width: 960px;
+    padding: 0 15px;
+    margin: 80px auto;
+    align-items: center;
+    flex-direction: column;
+}
+
+.container {
+    width: 50%;
+    height: 50%;
+    margin: 25px;
+    padding: 25px;
+    display: flex;
+    flex-wrap: wrap;
+    border-radius: 5px;
+    justify-content: center;
+    background-color: #FFFFFF;
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.2);
+}
+
+.container a {
+    font-size: x-large;
+    font-weight: bolder;
+    text-decoration: none;
+    color: rgb(15, 15, 15);
+    font-family: 'Montserrat', sans-serif;
+}
