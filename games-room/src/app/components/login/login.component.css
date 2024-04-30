@@ -1,0 +1,60 @@
+body {
+    font-family: 'Lato', sans-serif;
+}
+
+.container {
+    margin-top: 50px;
+}
+
+h1 {
+    margin-bottom: 15px;
+}
+
+label {
+    margin-top: 15px;
+    margin-bottom: 5px;
+    padding-top: 5px;
+}
+
+.form-group label {
+    color: grey;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+.btn-send {
+    width: 100%;
+    font-weight: 300;
+    margin-top: 25px;
+    font-weight: 600;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    border-color: rgba(33, 37, 41, 1);
+    background-color: rgb(27, 79, 131);
+}
+
+.help-block.with-errors {
+    color: #ff5050;
+    margin-top: 5px;
+}
+
+.card {
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.forgot-password a :hover{
+    cursor: pointer;
+}
+
+.row h3 {
+    color: whitesmoke;
+    text-align: center;
+    margin-top: -50px;
+}
+
+.row h5 {
+    color: rgb(182, 178, 178);
+    text-align: center;
+    font-weight: lighter;
+}

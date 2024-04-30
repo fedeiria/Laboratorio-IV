@@ -1,0 +1,74 @@
+<div class="container">
+    <div class="row">
+        <div class="col-lg-7 mx-auto">
+            <div class="card mt-2 mx-auto p-4 bg-dark">
+                <div class="card-body bg-dark">
+                    <div class="container">
+                        <form [formGroup]="formRegister" (ngSubmit)="onSubmit()" id="contact-form" role="form">
+                            <div class="row">
+                                <h3>!Hola!</h3>
+                                <h5>!Completa el formulario para unirte a nuestra comunidad!</h5>
+                                <div class="form-group">
+                                    <label for="form-name">
+                                        Nombre
+                                        <span class="badge badge-warning">*</span>
+                                    </label>
+                                    <input type="text" formControlName="name" id="form-name" name="name"
+                                        class="form-control" placeholder="Ingresa tu nombre" required="required">
+                                    <div class="alert alert-danger mt-2" [hidden]="name.valid || name.pristine">
+                                        <span *ngIf="name.errors?.['required']">
+                                            Completa el campo con tu nombre
+                                        </span>
+                                    </div>
+                                    <label for="form-surname">
+                                        Apellido
+                                        <span class="badge badge-warning">*</span>
+                                    </label>
+                                    <input type="text" formControlName="surname" id="form-surname" name="surname"
+                                        class="form-control" placeholder="Ingresa tu apellido" required="required">
+                                    <div class="alert alert-danger mt-2" [hidden]="surname.valid || surname.pristine">
+                                        <span *ngIf="surname.errors?.['required']">
+                                            Completa el campo con tu apellido
+                                        </span>
+                                    </div>
+                                    <label for="form-email">
+                                        Correo electronico
+                                        <span class="badge badge-warning">*</span>
+                                    </label>
+                                    <input type="email" formControlName="email" id="form-email" name="email"
+                                        class="form-control" placeholder="Ingresa tu correo electronico"
+                                        required="required">
+                                    <div class="alert alert-danger mt-2" [hidden]="email.valid || email.pristine">
+                                        <span *ngIf="email.errors?.['required']">
+                                            Completa el campo con tu correo electronico
+                                        </span>
+                                        <span *ngIf="email.errors?.['email']">
+                                            Correo electronico invalido
+                                        </span>
+                                    </div>
+                                    <label for="form-password">
+                                        Contraseña
+                                        <span class="badge badge-warning">*</span>
+                                    </label>
+                                    <input type="password" formControlName="password" id="form-password" name="password"
+                                        class="form-control" placeholder="Ingresa tu contraseña" required="required">
+                                    <div class="alert alert-danger mt-2" [hidden]="password.pristine || password.valid">
+                                        <span *ngIf="password.errors?.['required']">
+                                            Completa el campo con tu contraseña
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <input type="submit" class="btn btn-success btn-send  pt-2 btn-block"
+                                        value="Registrarse" [disabled]="formRegister.invalid">
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

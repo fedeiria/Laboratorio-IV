@@ -1,0 +1,33 @@
+.content-description {
+    display: flex;
+    flex-wrap: wrap;
+    text-align: center;
+    justify-content: center;
+}
+
+.game-description img {
+    height: 200px;
+}
+
+.game-description h3 {
+    margin-top: 20px;
+    margin-bottom: 25px;
+    font-size: 25px;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.game-description p {
+    font-size: 15px;
+    font-weight: bold;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.btn {
+    margin: 20px;
+    width: 250px;
+    height: 40px;
+    border: none;
+    cursor: pointer;
+    font-weight: bold;
+    font-family: 'Montserrat', sans-serif;
+}

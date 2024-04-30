@@ -1,0 +1,19 @@
+.btn-outline-light {
+    font-size: 1.1rem;
+    color: rgb(225, 225, 225);
+    border-color: rgb(225, 225, 225);
+}
+
+.btn-outline-light:hover {
+    color: black;
+}
+
+.card {
+    border: none;
+    border-radius: 0%;
+}
+
+.nav {
+    color: rgb(225, 225, 225);
+    font-size: 1.1rem;
+}

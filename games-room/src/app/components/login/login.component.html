@@ -1,0 +1,59 @@
+<div class="container">
+    <div class="row">
+        <div class="col-lg-7 mx-auto">
+            <div class="card mt-2 mx-auto p-4 bg-dark">
+                <div class="card-body bg-dark">
+                    <div class="container">
+                        <form [formGroup]="formLogin" (ngSubmit)="onSubmit()" id="contact-form" role="form">
+                            <div class="controls">
+                                <div class="row">
+                                    <h3>!Hola de nuevo!</h3>
+                                    <h5>!Nos alegramos de volver a verte!</h5>
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label for="form-email">Correo Electronico</label>
+                                            <input type="email" formControlName="email" id="form-email" name="email"
+                                                class="form-control" placeholder="Ingresa tu correo electronico"
+                                                required="required">
+                                            <div class="alert alert-danger mt-2" [hidden]="email.valid || email.pristine">
+                                                <span *ngIf="email.errors?.['required']">
+                                                    Completa el campo con tu correo electronico
+                                                </span>
+                                                <span *ngIf="email.errors?.['email']">
+                                                    Correo electronico invalido
+                                                </span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label for="form-password">Contraseña</label>
+                                            <input type="password" formControlName="password" id="form-password"
+                                                name="password" class="form-control" placeholder="Ingresa tu contraseña"
+                                                required="required">
+                                            <div class="alert alert-danger mt-2" [hidden]="password.pristine || password.valid">
+                                                <span *ngIf="password.errors?.['required']">
+                                                    Completa el campo con tu contraseña
+                                                </span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <input type="submit" class="btn btn-success btn-send  pt-2 btn-block"
+                                            value="Ingresar" [disabled]="formLogin.invalid">
+                                    </div>
+                                </div>
+                                <div class="forgot-password">
+                                    <a routerLink="/recover-password" routerLinkActive="active"><label
+                                            for="forgot-password">Olvide mi contraseña</label></a>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
