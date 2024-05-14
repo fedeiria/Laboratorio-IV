@@ -1,7 +1,8 @@
-import { Component } from '@angular/core';
 import { Router } from '@angular/router';
-import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
+import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { DialogService } from '../../services/messages/dialog/dialog.service';
+import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-recover-password',
@@ -11,9 +12,8 @@ import { CommonModule } from '@angular/common';
   styleUrl: './recover-password.component.css'
 })
 export class RecoverPasswordComponent {
-  constructor(private router: Router) {
-    
-  }
+
+  constructor(private dialogService: DialogService, private router: Router) { }
 
   formRecover = new FormGroup({
     'email': new FormControl('', [Validators.required, Validators.email])
@@ -23,8 +23,11 @@ export class RecoverPasswordComponent {
     return this.formRecover.get('email') as FormControl;
   }
 
-  recoverPassword(): void {
-    window.alert('We send an email to ' + this.email.value + '. Please check your mailbox and follow the instructions!');
+  recoverPassword() {
+    this.dialogService.showDialogMessage({
+      title: 'Games Room',
+      content: 'Te enviamos un email a ' + this.email.value + '<br>' + '.Verifica tu bandeja de entrada y segui los pasos para recuperar la contraseña',
+    });
     this.router.navigate(['welcome']);
   }
 }

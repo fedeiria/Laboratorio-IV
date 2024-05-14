@@ -11,50 +11,68 @@
                                 <div class="form-group">
                                     <label for="form-name">
                                         Nombre
-                                        <span class="badge badge-warning">*</span>
+                                        <span class="span-required">*</span>
                                     </label>
-                                    <input type="text" formControlName="name" id="form-name" name="name"
-                                        class="form-control" placeholder="Ingresa tu nombre" required="required">
+                                    <input type="text" formControlName="name" id="form-name" name="name" class="form-control" placeholder="Ingresa tu nombre" required="required" maxlength="45">
                                     <div class="alert alert-danger mt-2" [hidden]="name.valid || name.pristine">
                                         <span *ngIf="name.errors?.['required']">
                                             Completa el campo con tu nombre
                                         </span>
+                                        <span *ngIf="name.errors?.['pattern']">
+                                            No es un nombre valido
+                                        </span>
                                     </div>
                                     <label for="form-surname">
                                         Apellido
-                                        <span class="badge badge-warning">*</span>
+                                        <span class="span-required">*</span>
                                     </label>
-                                    <input type="text" formControlName="surname" id="form-surname" name="surname"
-                                        class="form-control" placeholder="Ingresa tu apellido" required="required">
+                                    <input type="text" formControlName="surname" id="form-surname" name="surname" class="form-control" placeholder="Ingresa tu apellido" required="required" maxlength="45">
                                     <div class="alert alert-danger mt-2" [hidden]="surname.valid || surname.pristine">
                                         <span *ngIf="surname.errors?.['required']">
                                             Completa el campo con tu apellido
                                         </span>
+                                        <span *ngIf="surname.errors?.['pattern']">
+                                            No es un apellido valido
+                                        </span>
                                     </div>
                                     <label for="form-email">
                                         Correo electronico
-                                        <span class="badge badge-warning">*</span>
+                                        <span class="span-required">*</span>
                                     </label>
-                                    <input type="email" formControlName="email" id="form-email" name="email"
-                                        class="form-control" placeholder="Ingresa tu correo electronico"
-                                        required="required">
+                                    <input type="email" formControlName="email" id="form-email" name="email" class="form-control" placeholder="Ingresa tu correo electronico"
+                                        required="required" maxlength="55">
                                     <div class="alert alert-danger mt-2" [hidden]="email.valid || email.pristine">
                                         <span *ngIf="email.errors?.['required']">
                                             Completa el campo con tu correo electronico
                                         </span>
-                                        <span *ngIf="email.errors?.['email']">
+                                        <span *ngIf="email.errors?.['pattern']">
                                             Correo electronico invalido
                                         </span>
                                     </div>
                                     <label for="form-password">
                                         Contraseña
-                                        <span class="badge badge-warning">*</span>
+                                        <span class="span-required">*</span>
                                     </label>
-                                    <input type="password" formControlName="password" id="form-password" name="password"
-                                        class="form-control" placeholder="Ingresa tu contraseña" required="required">
+                                    <input type="password" formControlName="password" id="form-password" name="password" class="form-control" placeholder="Ingresa tu contraseña" required="required" maxlength="35">
                                     <div class="alert alert-danger mt-2" [hidden]="password.pristine || password.valid">
                                         <span *ngIf="password.errors?.['required']">
                                             Completa el campo con tu contraseña
+                                        </span>
+                                        <span *ngIf="password.errors?.['minlength']">
+                                            La contraseña debe tener un minimo de {{ password.getError('minlength').requiredLength }} caracteres
+                                        </span>
+                                    </div>
+                                    <label for="form-password">
+                                        Repetir Contraseña
+                                        <span class="span-required">*</span>
+                                    </label>
+                                    <input type="password" formControlName="repeat-password" id="form-repeat-password" name="repeat-password" class="form-control" placeholder="Ingresa tu contraseña" required="required" maxlength="35">
+                                    <div class="alert alert-danger mt-2" [hidden]="repeatPassword.pristine || repeatPassword.valid">
+                                        <span *ngIf="repeatPassword.errors?.['required']">
+                                            Completa el campo con tu contraseña
+                                        </span>
+                                        <span>
+                                            {{repeatPassword.getError('noMatch')}}
                                         </span>
                                     </div>
                                 </div>

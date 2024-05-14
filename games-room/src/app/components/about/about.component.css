@@ -1,0 +1,28 @@
+.container {
+    margin: 15px;
+}
+
+.bg-green {
+    background: grey;
+}
+
+.bg-font-blue {
+    color: whitesmoke;
+}
+
+.sbold {
+    font-weight: 600 !important;
+}
+
+.info-username {
+    margin: 5px;
+}
+
+.row {
+    margin-left: -15px;
+    margin-right: -15px;
+}
+
+.span-description {
+    font-weight: bold;
+}

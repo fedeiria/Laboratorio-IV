@@ -56,3 +56,7 @@ label {
     text-align: center;
     font-weight: lighter;
 }
+
+.span-required {
+    color: hsl(359 calc( 1 * 87.3%) 59.8% / 1);
+}

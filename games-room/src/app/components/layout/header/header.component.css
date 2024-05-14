@@ -1,3 +1,12 @@
+* {
+    font-family: 'Roboto', sans-serif;
+}
+
+.bg-dark {
+    --bs-bg-opacity: 1;
+    background-color: rgba(33, 37, 41, 1) !important;
+}
+
 .btn-outline-light {
     font-size: 1.1rem;
     color: rgb(225, 225, 225);
@@ -16,4 +25,8 @@
 .nav {
     color: rgb(225, 225, 225);
     font-size: 1.1rem;
+}
+
+a img {
+    margin-left: 20px;
 }

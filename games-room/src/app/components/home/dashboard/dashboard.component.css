@@ -1,0 +1,52 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    position: relative;
+    font-family: 'Roboto', sans-serif;
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+    border-radius: .5rem;
+    background-color: #fff;
+    margin: 1.25rem 0 1.25rem 0;
+    box-shadow: 0 .25rem .5rem #e6edef;
+
+    .card-header {
+        padding: 1rem 1.5rem;
+        border-bottom: 1px solid #edf1f7;
+        font-size: 1rem;
+        font-weight: 600;
+    }
+
+    .card-body {
+        padding: 1rem 1.5rem;
+    }
+}
+
+.body {
+    width: calc(100% - 5rem);
+    height: 100vh;
+    margin-left: 5rem;
+    z-index: 0;
+    position: relative;
+    top: 0;
+    transition: all .2 ease;
+    background: #f4f7fa;
+    padding: 3rem;
+}
+
+.body-trimmed {
+    width: calc(100% - 20rem);
+    margin-left: 20rem;
+}
+
+.body-md-screen {
+    width: calc(100% - 5rem);
+    margin-left: 5rem;
+}

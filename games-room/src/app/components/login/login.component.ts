@@ -1,30 +1,24 @@
 import { Router } from '@angular/router';
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { MatDialog } from '@angular/material/dialog';
-import { MatButtonModule } from '@angular/material/button';
 import { RouterLink, RouterLinkActive } from '@angular/router';
-import { addDoc, collection, collectionData, Firestore } from '@angular/fire/firestore';
+import { AuthService } from '../../services/auth/auth.service';
+import { DialogService } from '../../services/messages/dialog/dialog.service';
 import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
-import { DialogElementsComponent } from '../layout/dialogs/dialog-elements/dialog-elements.component';
 
 @Component({
   selector: 'app-login',
   standalone: true,
-  imports: [CommonModule, DialogElementsComponent, MatButtonModule, ReactiveFormsModule, RouterLink, RouterLinkActive],
+  imports: [CommonModule, ReactiveFormsModule, RouterLink, RouterLinkActive],
   templateUrl: './login.component.html',
   styleUrl: './login.component.css'
 })
 export class LoginComponent {
 
-  usersCollection: any[] = [];
-
-  constructor(public dialog: MatDialog, private firestore: Firestore, private router: Router) {
-
-  }
+  constructor(private authService: AuthService, private dialogService: DialogService, private router: Router) { }
 
   formLogin = new FormGroup({
-    'email': new FormControl('', [Validators.email, Validators.required]),
+    'email': new FormControl('', [Validators.pattern('[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$'), Validators.required]),
     'password': new FormControl('', Validators.required)
   });
 
@@ -36,35 +30,17 @@ export class LoginComponent {
     return this.formLogin.get('password') as FormControl;
   }
 
-  openDialog() {
-    this.dialog.open(DialogElementsComponent, { restoreFocus: false });
-  }
-
-  login() {
-    let collections = collection(this.firestore, 'users');
-    const observable = collectionData(collections);
-
-    observable.subscribe((response) => {
-      this.usersCollection = response;
-
-      this.usersCollection.forEach(login => {
-        if (login.email === this.email.value && login.password === this.password.value) {
-          this.saveLoginTimestamp();
-          this.router.navigate(['/home']);
-        }
-        else {
-          this.openDialog();
-        }
+  onSubmit() {
+    this.authService.login(this.email.value, this.password.value)
+    .then(() => {
+      this.authService.saveLoginTimestamp(this.email.value);
+      this.router.navigate(['/home']);
+    })
+    .catch(() => {
+      this.dialogService.showDialogMessage({
+        title: "Games Room",
+        content: "Usuario/contraseña incorrectos."
       });
     });
-  }
-
-  saveLoginTimestamp() {
-    let collections = collection(this.firestore, 'logins');
-    addDoc(collections, { 'email': this.email.value, 'created': new Date() });
-  }
-
-  onSubmit() {
-    this.login();
   }
 }
